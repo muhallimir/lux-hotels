@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "../contexts/ThemeContext";
+import { ThemeProvider } from "../../contexts/ThemeContext";
 import AmenitiesFilter, { AMENITY_OPTIONS } from "./AmenitiesFilter";
 
 const Wrap = ({ children }) => <ThemeProvider>{children}</ThemeProvider>;
