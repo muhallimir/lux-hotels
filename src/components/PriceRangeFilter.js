@@ -1,9 +1,9 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 
 const Wrap = styled.div`
-  background: ${({ palette }) => palette.surface};
-  border: 1px solid ${({ palette }) => palette.border};
+  background: ${(p) => p.theme.surface};
+  border: 1px solid ${(p) => p.theme.border};
   border-radius: 8px;
   padding: 16px;
   margin: 16px 0;
@@ -29,11 +29,11 @@ const Labels = styled.div`
   opacity: 0.7;
 `;
 
-const PriceRangeFilter = ({ palette, min = 0, max = 1000, value, onChange }) => {
+const PriceRangeFilter = ({ min = 0, max = 1000, value, onChange }) => {
   const v = value || { min, max };
   return (
-    <Wrap palette={palette}>
-      <Title palette={palette}>
+    <Wrap>
+      <Title>
         <span>Price per night</span>
         <span style={{ fontSize: 13, fontWeight: 500 }}>
           ${v.min} – ${v.max}
@@ -49,13 +49,12 @@ const PriceRangeFilter = ({ palette, min = 0, max = 1000, value, onChange }) => 
       />
       <Range
         type="range"
-        min={min}
-        max={max}
+        min={max}
         value={v.max}
         onChange={(e) => onChange({ ...v, max: Math.max(Number(e.target.value), v.min + 10) })}
         data-testid="price-max"
       />
-      <Labels palette={palette}>
+      <Labels>
         <span>${min}</span>
         <span>${max}+</span>
       </Labels>
