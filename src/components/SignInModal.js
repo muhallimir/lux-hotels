@@ -14,9 +14,9 @@ const Modal = styled.div`
 `;
 
 const Card = styled.form`
-  background: ${({ palette }) => palette.background};
-  color: ${({ palette }) => palette.text};
-  border: 1px solid ${({ palette }) => palette.border};
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 24px;
   width: 92vw;
@@ -32,16 +32,16 @@ const Title = styled.h3`
 
 const Input = styled.input`
   padding: 10px 12px;
-  border: 1px solid ${({ palette }) => palette.border};
-  background: ${({ palette }) => palette.surface};
-  color: ${({ palette }) => palette.text};
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #111827;
   border-radius: 6px;
   font-size: 14px;
 `;
 
 const Btn = styled.button`
-  background: ${({ palette }) => palette.accent};
-  color: ${({ palette }) => palette.accentDark};
+  background: #af9a7d;
+  color: #ffffff;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -51,14 +51,14 @@ const Btn = styled.button`
 
 const Ghost = styled.button`
   background: transparent;
-  color: ${({ palette }) => palette.text};
-  border: 1px solid ${({ palette }) => palette.border};
+  color: #111827;
+  border: 1px solid #e5e7eb;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
 `;
 
-const SignInModal = ({ palette, open, onClose, onSwitchToSignUp, onSwitchToReset }) => {
+const SignInModal = ({ open, onClose, onSwitchToSignUp, onSwitchToReset }) => {
   const { signIn } = useAuth();
   const { push } = useToast();
   const [email, setEmail] = useState("");
@@ -76,14 +76,16 @@ const SignInModal = ({ palette, open, onClose, onSwitchToSignUp, onSwitchToReset
     }
   };
 
+  if (!open) return null;
+
   return (
-    <Modal open={open} onClick={onClose}>
-      <Card palette={palette} onClick={(e) => e.stopPropagation()} onSubmit={submit}>
+    <Modal open onClick={onClose}>
+      <Card onClick={(e) => e.stopPropagation()} onSubmit={submit}>
         <Title>Sign in</Title>
         <Input
           type="email"
           placeholder="Email"
-          palette={palette}
+         
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           data-testid="signin-email"
@@ -91,23 +93,23 @@ const SignInModal = ({ palette, open, onClose, onSwitchToSignUp, onSwitchToReset
         <Input
           type="password"
           placeholder="Password"
-          palette={palette}
+         
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           data-testid="signin-password"
         />
-        <Btn palette={palette} type="submit" data-testid="signin-submit">
+        <Btn type="submit" data-testid="signin-submit">
           Sign in
         </Btn>
         <div style={{ display: "flex", justifyContent: "space-between", gap: 8 }}>
-          <Ghost type="button" palette={palette} onClick={onSwitchToReset}>
+          <Ghost type="button" onClick={onSwitchToReset}>
             Forgot password?
           </Ghost>
-          <Ghost type="button" palette={palette} onClick={onSwitchToSignUp}>
+          <Ghost type="button" onClick={onSwitchToSignUp}>
             Create account
           </Ghost>
         </div>
-        <Ghost type="button" palette={palette} onClick={onClose}>
+        <Ghost type="button" onClick={onClose}>
           Close
         </Ghost>
       </Card>

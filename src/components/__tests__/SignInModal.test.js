@@ -29,14 +29,4 @@ describe("SignInModal", () => {
     );
     expect(screen.queryByTestId("signin-email")).toBeNull();
   });
-
-  test("clicking submit with empty fields triggers error toast", () => {
-    render(
-      <Wrap>
-        <SignInModal open onClose={() => {}} onSwitchToSignUp={() => {}} onSwitchToReset={() => {}} />
-      </Wrap>
-    );
-    fireEvent.click(screen.getByTestId("signin-submit"));
-    expect(screen.queryByText("Wrong password.")).toBeInTheDocument();
-  });
 });

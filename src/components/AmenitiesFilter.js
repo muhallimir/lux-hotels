@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
-  background: ${({ palette }) => palette.surface};
-  border: 1px solid ${({ palette }) => palette.border};
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 16px;
   margin: 16px 0;
@@ -16,6 +16,7 @@ const Group = styled.div`
 const Title = styled.div`
   font-weight: 600;
   margin-bottom: 8px;
+  color: #111827;
 `;
 
 const Option = styled.label`
@@ -23,6 +24,7 @@ const Option = styled.label`
   align-items: center;
   gap: 8px;
   padding: 6px 0;
+  color: #111827;
   cursor: pointer;
   user-select: none;
 `;
@@ -40,16 +42,16 @@ const AMENITY_OPTIONS = [
   { key: "balcony", label: "Balcony" },
 ];
 
-const AmenitiesFilter = ({ palette, value = [], onChange }) => {
+const AmenitiesFilter = ({ value = [], onChange }) => {
   const toggle = (key) => {
     if (value.includes(key)) onChange(value.filter((k) => k !== key));
     else onChange([...value, key]);
   };
 
   return (
-    <Wrap palette={palette}>
+    <Wrap>
       <Group>
-        <Title palette={palette}>Amenities</Title>
+        <Title>Amenities</Title>
         {AMENITY_OPTIONS.map((opt) => (
           <Option key={opt.key}>
             <input
