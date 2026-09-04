@@ -1,4 +1,4 @@
-import { buildHotelSchema, buildReviewSchema, buildBreadcrumbSchema } from "./schema";
+import { buildHotelSchema, buildReviewSchema, buildBreadcrumbSchema } from "../schema";
 
 describe("schema builders", () => {
   test("buildHotelSchema returns a valid Hotel schema with defaults", () => {
