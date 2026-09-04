@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { ThemeProvider } from "../../contexts/ThemeContext";
 import { ToastProvider, useToast } from "../../contexts/ToastContext";
-import ToastContainer from "./ToastContainer";
+import ToastContainer from "../ToastContainer";
 
 const Trigger = () => {
   const { push } = useToast();

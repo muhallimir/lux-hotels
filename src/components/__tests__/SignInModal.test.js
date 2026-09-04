@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { AuthProvider } from "../../contexts/AuthContext";
 import { ToastProvider } from "../../contexts/ToastContext";
-import SignInModal from "./SignInModal";
+import SignInModal from "../SignInModal";
 
 const Wrap = ({ children }) => (
   <AuthProvider>
