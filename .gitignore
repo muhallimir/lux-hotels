@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Recorded demo videos, the scripts that produce them are tracked
+demos/**/*.mp4

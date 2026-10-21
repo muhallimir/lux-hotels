@@ -1,0 +1,9 @@
+intro	Welcome to Lux Hotels, a React hotel front end with the catalogue served from Contentful. This tour covers the filters and a room detail page.
+home	The home page leads with the hero, the services, and a featured rooms row that reads from the same catalogue as the rooms page.
+rooms	The rooms page puts the filters above the grid, so every room shows its rate, its photo, and a link through to the detail.
+filters	The filters are live. Room type, number of guests, price range and extras like free breakfast all narrow the list as you change them.
+detail	Opening a room shows the photos, the description, the facts, and exactly what the rate includes.
+end	That is Lux Hotels: a Contentful catalogue, one context for the filters, and a detail page for every room.
+filler-a	One moment, this is loading.
+filler-b	Almost there.
+filler-c	Here we go.
